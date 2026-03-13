@@ -1,0 +1,30 @@
+<!-- public/home.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Home - Complaint System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="top">
+    <h1>Complaint System</h1>
+    <div>
+      <span id="userInfo"></span>
+      <button onclick="logout()" class="btn-small">Logout</button>
+    </div>
+  </div>
+
+  <div id="content" class="content-area"></div>
+
+  <script src="script.js"></script>
+  <script>
+    // On load, ensure token exists
+    if (!localStorage.getItem('token')) {
+      window.location = 'login.html';
+    } else {
+      loadHomePage();
+    }
+  </script>
+</body>
+</html>

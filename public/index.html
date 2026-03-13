@@ -1,0 +1,38 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Register - Complaint System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="card">
+    <h2>Register</h2>
+
+    <input id="name" placeholder="Name" />
+    <input id="email" placeholder="Email" />
+    <input id="phone" placeholder="Phone (optional)" />
+    <input id="password" placeholder="Password" type="password" />
+
+    <label style="display:block; margin-top:8px; text-align:left; margin-left:6px;">Register as:</label>
+    <select id="role">
+      <option value="user" selected>User</option>
+      <option value="admin">Admin</option>
+    </select>
+
+    <button id="registerBtn">Register & Login</button>
+
+    <p style="margin-top:12px;">Already registered? <a href="login.html">Login</a></p>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    // Redirect to home if already logged in
+    if (localStorage.getItem('token')) {
+      window.location = 'home.html';
+    }
+    document.getElementById('registerBtn').onclick = doRegister;
+  </script>
+</body>
+</html>
